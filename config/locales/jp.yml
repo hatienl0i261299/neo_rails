@@ -1,0 +1,5 @@
+jp:
+  exception:
+    server_internal_error: "内部サーバーエラー"
+    bad_request: "Bad Request"
+    not_found: "Not Found"

@@ -1,0 +1,36 @@
+version: "3.9"
+services:
+  db:
+    container_name: db_rails
+    image: postgres:14.1-alpine
+    volumes:
+      - postgres:/var/lib/postgres/data
+    expose:
+      - 5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USERNAME: postgres
+      LANG: 'en_US.UTF-8'
+      LANGUAGE: 'en_US:en'
+      LC_ALL: 'en_US.UTF-8'
+  web_rails:
+    container_name: web_rails
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 8888 -b '0.0.0.0'"
+    volumes:
+      - .:/myapp
+    ports:
+      - "8888:8888"
+    depends_on:
+      - db
+  adminer_rails:
+    container_name: adminer_rails
+    image: adminer
+    ports:
+      - 5555:8080
+    environment:
+      - ADMINER_DESIGN=mvt
+    logging:
+      driver: "none"
+volumes:
+  postgres:

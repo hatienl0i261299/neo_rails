@@ -1,0 +1,1598 @@
+{
+	"info": {
+		"_postman_id": "81ebea40-cfaa-4cb9-b63a-547b6805b0db",
+		"name": "nile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pokemon_pet",
+			"item": [
+				{
+					"name": "Get lol champion by tree id Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/pokemon_pet?page=1&per_page=12",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"pokemon_pet"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Article",
+			"item": [
+				{
+					"name": "Get article",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/pokemon_pet?page=1&per_page=12",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"pokemon_pet"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authen",
+			"item": [
+				{
+					"name": "Get token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"root\",\n    \"password\": \"root\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{rails_server}}api/v1/user_token",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"user_token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tree",
+			"item": [
+				{
+					"name": "Get full tree",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/tree/",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"tree",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get full path from a node",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/tree/21",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"tree",
+								"21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a new node",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"1233\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{rails_server}}api/v1/tree/1/",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"tree",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a node",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/tree/131",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"tree",
+								"131"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get fuill parent",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/tree/227/full_parent",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"tree",
+								"227",
+								"full_parent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get children",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/tree/2/children",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"tree",
+								"2",
+								"children"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Nurse",
+			"item": [
+				{
+					"name": "Get nurse",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/nurse/4",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"nurse",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all nurse",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/nurse/?page=1&per_page=10",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"nurse",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create nurse",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"999999c\",\r\n    \"phone\": \"0912873901278390812\",\r\n    \"address\": \"Vicaccet ncascascascam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{rails_server}}api/v1/nurse/",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"nurse",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update nurse booked",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": 75,\r\n        \"booked\": \"false\"\r\n    },\r\n    {\r\n        \"id\": 76,\r\n        \"booked\": \"true\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{rails_server}}api/v1/update_nurse_booked/",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"update_nurse_booked",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add nurse schedule",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": 1,\r\n        \"booked\": \"true\"\r\n    },\r\n    {\r\n        \"id\": 4,\r\n        \"booked\": \"true\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{rails_server}}api/v1/nurse/add_schedules/1",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"nurse",
+								"add_schedules",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Destroy nurse",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/nurse/20",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"nurse",
+								"20"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Author",
+			"item": [
+				{
+					"name": "Destroy author",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/author/2/",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"author",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get author by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/author/3",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"author",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all author",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/author/?page=",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"author",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ticket",
+			"item": [
+				{
+					"name": "Get all tickets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/ticket?page=2&per_page=10",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"ticket"
+							],
+							"query": [
+								{
+									"key": "ccc",
+									"value": "ccccc",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ticket info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/ticket/cccc",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"ticket",
+								"cccc"
+							],
+							"query": [
+								{
+									"key": "match",
+									"value": "Paris Saint GermaiN",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get user info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/users/41",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"users",
+								"41"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get me info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/me",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/users/31",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"users",
+								"31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/users/?page=2&per_page=5",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "per_page",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by email",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/find_user/?email=joshua@goodwin.co",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"find_user",
+								""
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "joshua@goodwin.co"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LOL champion",
+			"item": [
+				{
+					"name": "Get lol champion by tree id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/lol_champion?tree_id=147",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"lol_champion"
+							],
+							"query": [
+								{
+									"key": "tree_id",
+									"value": "147"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Message",
+			"item": [
+				{
+					"name": "Get message",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "locale",
+								"value": "jp",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/message/?page=1&per_page=11",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"message",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "11"
+								},
+								{
+									"key": "content",
+									"value": "Eos dolor aperiaM",
+									"disabled": true
+								},
+								{
+									"key": "active",
+									"value": "[false]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Status",
+			"item": [
+				{
+					"name": "Get all status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/status",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Schedule",
+			"item": [
+				{
+					"name": "Get all schedule",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/schedule",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"schedule"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Destroy Schedule",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/schedule/4",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"schedule",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find schedule by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/schedule/1?page=1",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"schedule",
+								"1"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update schedule",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"time_start\": \"07:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{rails_server}}api/v1/schedule/1",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"schedule",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create schedule",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"time_start\": \"19:00\",\r\n    \"time_end\": \"21:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{rails_server}}api/v1/schedule/",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"schedule",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Get book by ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "locale",
+								"value": "jp",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/book/1/",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"book",
+								"1",
+								""
+							],
+							"query": [
+								{
+									"key": "locale",
+									"value": "jp",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Book",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "locale",
+								"value": "jp",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/book/?page=3&per_page=10",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"book",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "3"
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update book",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": 1,\r\n        \"data\": {\r\n            \"title\": \"\",\r\n            \"content\": \"2123c123\"\r\n        }\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"data\": {\r\n            \"title\": \"2casccasc2\",\r\n            \"content\": \"312cas3123\"\r\n        }\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{rails_server}}api/v1/book/bulk_update",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"book",
+								"bulk_update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Destroy book",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/book/2/",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"book",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Media_conan",
+			"item": [
+				{
+					"name": "Get all media conan",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/media_conan?page=1&per_page=12",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"media_conan"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get media conan info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/media_conan/48",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"media_conan",
+								"48"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download media avatar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/media_conan/31/avatar?width=100&height=99",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"media_conan",
+								"31",
+								"avatar"
+							],
+							"query": [
+								{
+									"key": "width",
+									"value": "100"
+								},
+								{
+									"key": "height",
+									"value": "99"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create all media conan",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "character",
+									"value": "new media",
+									"type": "text"
+								},
+								{
+									"key": "gadget",
+									"value": "gadcdccc",
+									"type": "text"
+								},
+								{
+									"key": "vehicle",
+									"value": "vecdcdccc",
+									"type": "text"
+								},
+								{
+									"key": "tree_id",
+									"value": "22",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/home/hatienl0i261299/Pictures/hook-1727484__340.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{rails_server}}api/v1/media_conan",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"media_conan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update media conan",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "character",
+									"value": "chacasc",
+									"type": "text"
+								},
+								{
+									"key": "gadget",
+									"value": "gadcd",
+									"type": "text"
+								},
+								{
+									"key": "vehicle",
+									"value": "vecdcd",
+									"type": "text"
+								},
+								{
+									"key": "tree_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/home/hatienl0i261299/Pictures/hook-1727484__340.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{rails_server}}api/v1/media_conan/43",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"media_conan",
+								"43"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete media conan",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "character",
+									"value": "chacasc",
+									"type": "text"
+								},
+								{
+									"key": "gadget",
+									"value": "gadcd",
+									"type": "text"
+								},
+								{
+									"key": "vehicle",
+									"value": "vecdcd",
+									"type": "text"
+								},
+								{
+									"key": "tree_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/home/hatienl0i261299/Pictures/Screenshot from 2022-02-11 09-42-50.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{rails_server}}api/v1/media_conan/48",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"media_conan",
+								"48"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Media_one_piece",
+			"item": [
+				{
+					"name": "Get all media one piece",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/media_one_piece?page=1&per_page=12",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"media_one_piece"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Change locale",
+			"item": [
+				{
+					"name": "Change locale",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{rails_server}}api/v1/book/1",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"book",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

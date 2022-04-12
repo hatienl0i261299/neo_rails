@@ -1,0 +1,32 @@
+api:
+  v1:
+    ticket:
+      GET:
+        - read
+    users:
+      <param>:
+        GET:
+          - user
+          - viewer
+      GET:
+        - user
+    me:
+      GET:
+        - viewer
+    lol_champion:
+      GET:
+        - ALL
+      <param>:
+        GET:
+          - ALL
+    media_conan:
+      GET:
+        - ALL
+      POST:
+        - ALL
+      <param>:
+        GET:
+          - ALL
+        avatar:
+          GET:
+            - ALL
