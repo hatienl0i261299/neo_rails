@@ -87,7 +87,7 @@
 			"name": "Authen",
 			"item": [
 				{
-					"name": "Get token",
+					"name": "Get token normal",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -101,13 +101,44 @@
 							}
 						},
 						"url": {
-							"raw": "{{rails_server}}api/v1/user_token",
+							"raw": "{{rails_server}}api/v1/auth/normal/",
 							"host": [
 								"{{rails_server}}api"
 							],
 							"path": [
 								"v1",
-								"user_token"
+								"auth",
+								"normal",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get token github",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"123123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{rails_server}}api/v1/auth/github/",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"github",
+								""
 							]
 						}
 					},

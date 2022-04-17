@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class AuthenticationTokenService
-  HMAC_SECRET = 'caklsmclkasmceuiro(*&#)(!*@casc,a;s*(&12cnas'
+  HMAC_SECRET = ENV['JWT_SECRET']
   # ALGORITHM_TYPE = 'RS512'
   ALGORITHM_TYPE = 'HS256'
   EXP = Time.now.to_i + (1 * 3600) # 4 hours

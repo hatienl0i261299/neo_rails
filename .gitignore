@@ -36,3 +36,4 @@ data.ms
 meilisearch
 storage/
 erd.pdf
+.env

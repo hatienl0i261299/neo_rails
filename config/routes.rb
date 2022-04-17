@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /en|jp/ do
     namespace :api do
       namespace :v1 do
-        post 'user_token' => 'user_token#create'
+        post 'auth/normal' => 'user_token#create_user_token'
+        post 'auth/github' => 'user_token#github'
         resources :article, only: %i[index]
         resources :users, only: %i[index destroy show]
         resources :nurse, only: %i[index show update destroy create]

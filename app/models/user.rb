@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_secure_password
 
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: "'%{value}' is not a valid email" }
+  validates :password, presence: false
 
   scope :username_similar, lambda { |username|
     quoted_username = ActiveRecord::Base.connection.quote_string(username)

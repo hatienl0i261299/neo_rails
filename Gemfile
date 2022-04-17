@@ -64,7 +64,6 @@ gem 'activerecord-analyze'
 gem 'ancestry'
 gem 'colorize'
 gem 'faker'
-gem 'jwt'
 gem 'will_paginate', '~> 3.3', '>= 3.3.1'
 
 gem 'pg_search', '~> 2.3'
@@ -73,5 +72,13 @@ gem 'meilisearch-rails', '~> 0.5.1'
 
 gem 'kaminari', '~> 1.2'
 
+gem 'faraday', '~> 2.2'
 gem 'goldiloader', '~> 4.2'
 gem 'rails-i18n'
+
+# gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+gem 'omniauth-rails_csrf_protection'
+# gem 'omniauth-google-oauth2'
+gem 'dotenv-rails'
+
+gem 'jwt', '~> 2.3'
