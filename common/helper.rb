@@ -50,3 +50,6 @@ class ReasonError
 end
 
 FORMAT_DATETIME_OUTPUT = '%H:%M:%S %d-%m-%Y'
+RENEW = 'renew_token'
+TOKEN = 'token'
+FIELDS_FACEBOOK_API_USER_INFO = 'email,first_name,last_name,picture.width(1000).height(1000)'

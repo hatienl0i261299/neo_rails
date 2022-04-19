@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "81ebea40-cfaa-4cb9-b63a-547b6805b0db",
+		"_postman_id": "9f577824-573e-4405-bfd8-040003bfc85e",
 		"name": "nile",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -101,14 +101,41 @@
 							}
 						},
 						"url": {
-							"raw": "{{rails_server}}api/v1/auth/normal/",
+							"raw": "{{rails_server}}api/v1/auth/",
 							"host": [
 								"{{rails_server}}api"
 							],
 							"path": [
 								"v1",
 								"auth",
-								"normal",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Renew token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"root\",\n    \"password\": \"root\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{rails_server}}api/v1/auth/",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"auth",
 								""
 							]
 						}
@@ -138,6 +165,64 @@
 								"v1",
 								"auth",
 								"github",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get token google auth2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"ya29.A0ARrdaM8nxFaDWPHCp9ZJvT9FbqSjOCKKW3tsT22v3Y236-dLj_54iwPDnXOcOWoo9-j1Qjee0ta-6YfOdHMomxx2NybwF-ugsRZwnkQTY8JC5s4ZLHINqV1AeVznDDK2ZVvI2qBHFAtxYIC9uYLfPZDIgiQ0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{rails_server}}api/v1/auth/google_auth2/",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"google_auth2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get token facebook auth2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"ya29.A0ARrdaM8nxFaDWPHCp9ZJvT9FbqSjOCKKW3tsT22v3Y236-dLj_54iwPDnXOcOWoo9-j1Qjee0ta-6YfOdHMomxx2NybwF-ugsRZwnkQTY8JC5s4ZLHINqV1AeVznDDK2ZVvI2qBHFAtxYIC9uYLfPZDIgiQ0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{rails_server}}api/v1/auth/facebook_auth2/",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"facebook_auth2",
 								""
 							]
 						}

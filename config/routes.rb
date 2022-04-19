@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /en|jp/ do
     namespace :api do
       namespace :v1 do
-        post 'auth/normal' => 'user_token#create_user_token'
+        post 'auth/' => 'user_token#create_user_token'
+        post 'auth/google_auth2' => 'user_token#google_auth2'
         post 'auth/github' => 'user_token#github'
+        post 'auth/facebook_auth2' => 'user_token#facebook_auth2'
+        post 'auth/renew_access_token', to: 'user_token#renew_access_token'
         resources :article, only: %i[index]
         resources :users, only: %i[index destroy show]
         resources :nurse, only: %i[index show update destroy create]

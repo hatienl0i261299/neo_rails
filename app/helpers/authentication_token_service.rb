@@ -18,15 +18,32 @@ class AuthenticationTokenService
   end
 
   def self.encode(user_id)
-    payload = { user_id: user_id, exp: EXP, aud: AUD, iat: IAT, iss: ISS, jti: JTI, timestamp: Time.current }
+    payload = { user_id: user_id, exp: EXP, aud: AUD, iat: IAT, iss: ISS, jti: JTI, type: TOKEN, timestamp: Time.current }
     # headers = { kid: JWK.kid }
     JWT.encode payload, HMAC_SECRET, ALGORITHM_TYPE
     # JWT.encode payload, JWK.keypair, ALGORITHM_TYPE, headers
   end
 
   def self.decode(token)
-    JWT.decode(token, HMAC_SECRET, true, { algorithm: ALGORITHM_TYPE })[0]
+    info = JWT.decode(token, HMAC_SECRET, true, { algorithm: ALGORITHM_TYPE })[0]
+    return nil if info['type'] != TOKEN
+
+    info
     # JWT.decode(token, nil, true, { algorithm: [ALGORITHM_TYPE], jwks: JWK_LOADER })[0]
+  rescue StandardError
+    nil
+  end
+
+  def self.encode_renew_token(user_id)
+    payload = { user_id: user_id, type: RENEW, timestamp: Time.current }
+    JWT.encode payload, HMAC_SECRET, ALGORITHM_TYPE
+  end
+
+  def self.decode_renew_token(renew_token)
+    info = JWT.decode(renew_token, HMAC_SECRET, true, { algorithm: ALGORITHM_TYPE })[0]
+    return nil if info['type'] != RENEW
+
+    info
   rescue StandardError
     nil
   end
