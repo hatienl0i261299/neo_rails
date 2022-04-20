@@ -6,7 +6,7 @@ application up and running.
 Things you may want to cover:
 * Ruby version
 ```
-6.1.4
+7.0.2
 ```
 
 * Ruby version

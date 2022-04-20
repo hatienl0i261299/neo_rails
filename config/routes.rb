@@ -12,6 +12,8 @@ Rails.application.routes.draw do
         post 'auth/google_auth2' => 'user_token#google_auth2'
         post 'auth/github' => 'user_token#github'
         post 'auth/facebook_auth2' => 'user_token#facebook_auth2'
+        post 'auth/microsoft_auth2' => 'user_token#microsoft_auth2'
+        post 'auth/yandex_auth2' => 'user_token#yandex_auth2'
         post 'auth/renew_access_token', to: 'user_token#renew_access_token'
         resources :article, only: %i[index]
         resources :users, only: %i[index destroy show]

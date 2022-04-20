@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AuthenticatorFacebookAuth2
   def initialize(connection = Faraday.new)
     @connection = connection

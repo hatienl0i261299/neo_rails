@@ -7,7 +7,7 @@ module Api
 
       rescue_from AuthenticationError, with: :handle_error
 
-      skip_before_action :authenticate_user, only: %i[create_user_token github renew_access_token google_auth2 facebook_auth2]
+      skip_before_action :authenticate_user, only: %i[create_user_token github renew_access_token google_auth2 facebook_auth2 microsoft_auth2 yandex_auth2]
 
       def create_user_token
         raise AuthenticationError unless user.authenticate(params.require(:password))
@@ -21,10 +21,36 @@ module Api
 
         info_token = AuthenticationTokenService.decode_renew_token(renew_token)
         user_id = info_token.try(:[], 'user_id')
-        puts user_id
+
         return bad_request 'Error renew_token' unless user_id
 
         render json: get_new_access_token(user_id), status: :ok
+      end
+
+      def yandex_auth2
+        authenticator = AuthenticatorYandex.new
+        user_yandex_info = authenticator.fetch_yandex_user_info(params[:code])
+
+        return head :unauthorized unless user_yandex_info['default_email']
+
+        user = create_user_from_social(user_yandex_info['real_name'], user_yandex_info['default_email'])
+
+        render json: {
+          **get_new_access_token(user.id)
+        }, status: :ok
+      end
+
+      def microsoft_auth2
+        authenticator = AuthenticatorMicrosoft.new
+        user_microsoft_info = authenticator.fetch_microsoft_user_info(params[:code])
+
+        return head :unauthorized unless user_microsoft_info['userPrincipalName']
+
+        user = create_user_from_social(user_microsoft_info['displayName'], user_microsoft_info['userPrincipalName'])
+
+        render json: {
+          **get_new_access_token(user.id)
+        }, status: :ok
       end
 
       def google_auth2

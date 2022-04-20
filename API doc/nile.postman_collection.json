@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9f577824-573e-4405-bfd8-040003bfc85e",
+		"_postman_id": "8ff83cb7-4378-46f5-bf10-a3b7101f9d03",
 		"name": "nile",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -121,7 +121,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"root\",\n    \"password\": \"root\"\n}",
+							"raw": "{\n    \"renew_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NiwidHlwZSI6InJlbmV3X3Rva2VuIiwidGltZXN0YW1wIjoiMjAyMi0wNC0yMCAyMzozNzo0NCArMDcwMCJ9.jWzvpEiH3H3sM7P9Vg8cRlqO9g1xWTYb5nhCv0tuCjw\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -129,14 +129,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{rails_server}}api/v1/auth/",
+							"raw": "{{rails_server}}api/v1/auth/renew_access_token",
 							"host": [
 								"{{rails_server}}api"
 							],
 							"path": [
 								"v1",
 								"auth",
-								""
+								"renew_access_token"
 							]
 						}
 					},
@@ -223,6 +223,64 @@
 								"v1",
 								"auth",
 								"facebook_auth2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get token yandex auth2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"AQAAAABgY29GAAfZIF_ha8XxiEm7pkkk6eSPjqw\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{rails_server}}api/v1/auth/yandex_auth2/",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"yandex_auth2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get token microsoft auth2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"EwB4A8l6BAAUkj1NuJYtTVha+Mogk+HEiPbQo04AAaTzP+n4QQUFlw6l8c4VTkhdd3YazmfcM2g/M2RavWbVTATNE8J1LH95rVMiJPqL8Qq4OsG9589qnX5KCRYiCucVbJbqs31OVr4qC3lM5drCCl7O6Gy367VKGrKEDd8b9kB5Q1kE8BufAOY7KvzDeuU4mp6tcRJGeJOsgK0ndH0ViVc3oYIhduZn6MGe7IL+Jbq9Uv1Ybm75094GBda7CA7797GOyc+90Z0YSGHoQBmxaG0oT0G4xabCHesr15fodTQEo4YAFW08NjhPH2IYSjNO4nYS+Z8e6aILGV6hIPxBOjQfxwo6sZKqM3Qq1tH9c96FKPmQQIW8g6o4oE2VQXYDZgAACDIgxwkhEAmwSAJ+KwCiSR6JHuCd38jef/vaMGyJZjSQbPhthp0kdvltf485/8LXVOMmbgxV/PxwdemnPTfG6UiRpk8gakUlUcGRpc38JkGYQbPe5wXaVLRRC+AmqmTBoV8bQUya+z0ck5IO1MvXh5/qg8tCQulT93A5jZICdOGD3mHQ2HdVqJLIy7YnTt4M6vchsUKMWiq4SXRYtd8fouzEKqdTddQRWbdcJpBgIr0zfcC+LN69uK3X3VH48qbFtutH56+IHG2rPWI4ScRaOsbqJJq6EeUKI5lxYjiZtvQSX8GPXigQ8xupP/g8OKamzENykz2+uFm/AeXVhbMkt6j5CAsVPeckE3Vkwp0dzvlGLZIvikrn+ic52awVAg7qORadw2VfVZt2M7hqwqEN1C3PebOvIYuJh0G7tsbVFHnAMJ/lzvE+Re/kOzR5bj5T7zfJv9+yS9VgZQGBi675NcDFbzBP+b8JGueXjjhwbpBovt6y1veFhkFEudWtYTmDzeKqRxAeRc9Ke2eWORAFTiLwdC8s90CUvFJVDsFrIs+IksopXsAC/v4sgwGpbb2eWBXB3Bm9MyZh822bXNH+9Kuw8Xb0PTUG2tG/tR5YuXW3TxZSHYxk2Gdzjw/NATGkK+LceMOKXI00mIKwS2oSeDho6LuwfCoyzoh07Ilt8Kvk+lbUpUA9QJwM4PIT3Z629YKGTFiFxIfRVsqjt4mTB8y612LQV7usfTCc/H0chggzqNTQMT2uTl1wTXh+LjlA47oWAtnPcYZkMAgdMOacT9YTAIsC\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{rails_server}}api/v1/auth/microsoft_auth2/",
+							"host": [
+								"{{rails_server}}api"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"microsoft_auth2",
 								""
 							]
 						}
